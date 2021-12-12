@@ -88,16 +88,16 @@ def select_features_modeling(choice_input):
     elif choice_input == 'Tự chọn':
         X = data[selective_features]
 
-        YChange = st.slider('Tỷ lệ tăng trưởng dân số hằng năm', X['Yearly Change'].min(), X['Yearly Change'].max(), X['Yearly Change'].mean())
-        Fert = st.slider('Tỷ suất sinh', X['Fert. Rate'].min(), X['Fert. Rate'].max(), X['Fert. Rate'].mean())
-        UPop = st.slider('Tỷ lệ dân số thành thị', X['Urban Pop %'].min(), X['Urban Pop %'].max(), X['Urban Pop %'].mean())
-        HCI = st.slider('Chỉ số vốn con người - HCI', X['HCI'].min(), X['HCI'].max(), X['HCI'].mean())
-        HE_GDP = st.slider("Mức chi tiêu cho y tế (% GDP)", X['Health_exp_pct_GDP'].min(), X['Health_exp_pct_GDP'].max(), X['Health_exp_pct_GDP'].mean())
-        HE_public = st.slider('Tỷ lệ chi tiêu công cho y tế', X['Health_exp_public_pct'].min(), X['Health_exp_public_pct'].max(), X['Health_exp_public_pct'].mean())
-        HE_external = st.slider('Mức chi tiêu cho y tế sử dụng nguồn tài trợ bên ngoài (% mức chi tiêu cho y tế)', X['External_health_exp_pct'].min(), X['External_health_exp_pct'].max(), X['External_health_exp_pct'].mean())
-        Phy = st.slider('Số bác sĩ trên 1000 dân', X['Physicians_per_1000'].min(), X['Physicians_per_1000'].max(), X['Physicians_per_1000'].mean())
-        Spec = st.slider('Số lượng đội ngũ y, bác sĩ chuyên khoa phẫu thuật trên 100 nghìn dân', X['Specialist_surgical_per_1000'].min(), X['Specialist_surgical_per_1000'].max(), X['Specialist_surgical_per_1000'].mean())
-        Birth = st.slider('Tỷ lệ trẻ em dưới 5 tuổi được đăng ký giấy khai sinh', X['Completeness_of_birth_reg'].min(), X['Completeness_of_birth_reg'].max(), X['Completeness_of_birth_reg'].mean())
+        YChange = st.slider('Tỷ lệ tăng trưởng dân số hằng năm', float(X['Yearly Change'].min()), float(X['Yearly Change'].max()), float(X['Yearly Change'].mean()))
+        Fert = st.slider('Tỷ suất sinh', float(X['Fert. Rate'].min()), float(X['Fert. Rate'].max()), float(X['Fert. Rate'].mean()))
+        UPop = st.slider('Tỷ lệ dân số thành thị', float(X['Urban Pop %'].min()), float(X['Urban Pop %'].max()), float(X['Urban Pop %'].mean()))
+        HCI = st.slider('Chỉ số vốn con người - HCI', float(X['HCI'].min()), float(X['HCI'].max()), float(X['HCI'].mean()))
+        HE_GDP = st.slider("Mức chi tiêu cho y tế (% GDP)", float(X['Health_exp_pct_GDP'].min()), float(X['Health_exp_pct_GDP'].max()), float(X['Health_exp_pct_GDP'].mean()))
+        HE_public = st.slider('Tỷ lệ chi tiêu công cho y tế', float(X['Health_exp_public_pct'].min()), float(X['Health_exp_public_pct'].max()), float(X['Health_exp_public_pct'].mean()))
+        HE_external = st.slider('Mức chi tiêu cho y tế sử dụng nguồn tài trợ bên ngoài (% mức chi tiêu cho y tế)', float(X['External_health_exp_pct'].min()), float(X['External_health_exp_pct'].max()), float(X['External_health_exp_pct'].mean()))
+        Phy = st.slider('Số bác sĩ trên 1000 dân', float(X['Physicians_per_1000'].min()), float(X['Physicians_per_1000'].max()), float(X['Physicians_per_1000'].mean()))
+        Spec = st.slider('Số lượng đội ngũ y, bác sĩ chuyên khoa phẫu thuật trên 100 nghìn dân', float(X['Specialist_surgical_per_1000'].min()), float(X['Specialist_surgical_per_1000'].max()), float(X['Specialist_surgical_per_1000'].mean()))
+        Birth = st.slider('Tỷ lệ trẻ em dưới 5 tuổi được đăng ký giấy khai sinh', float(X['Completeness_of_birth_reg'].min()), float(X['Completeness_of_birth_reg'].max()), float(X['Completeness_of_birth_reg'].mean()))
 
         IncomeG = st.selectbox('Phân loại nền kinh tế', X['Income group'].unique().tolist())
         Cont = st.selectbox('Châu lục', X['Continent'].unique().tolist())

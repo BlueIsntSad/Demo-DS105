@@ -16,3 +16,4 @@ pip install streamlit
 ```
 streamlit run demo.py
 ```
+App đã được deploy với Streamlit Cloud: https://share.streamlit.io/blueisntsad/demo-ds105/main/demo.py
